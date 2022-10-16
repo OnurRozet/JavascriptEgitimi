@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Fonsiyonlar</title>
+</head>
+<body>
+    <h1>Js Fonksiyonlar</h1>
+    <script>
+        //Fonsiyon Tanimlama
+        function FonsiyonAdi(params) {
+            console.log('Fonsiyona gonderilen deger : ', params);
+        }
+        //Fonksiyon cagirma 
+        FonsiyonAdi("js ile fonsiyon cagirimi")
+
+        function ToplamaYap(sayi1,sayi2) {
+            console.log('Sayilarin Toplami : ',sayi1+sayi2)
+        }
+        ToplamaYap(5,4)
+
+        function RenkDegistir(arkaPlanRengi,yaziRengi) {
+            document.bgColor=arkaPlanRengi;  //
+            document.fgColor=yaziRengi;
+        }
+        RenkDegistir("red","white")
+
+
+        var genislik=window.innerWidth;
+        var yukseklik=window.innerHeight;
+        document.write("<h3>Pencere Genisligi : " + genislik + "</h3>")
+        document.write("<h3>Pencere Yuksekligi : " + yukseklik + "</h3>")
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Secicler</title>
+    <style>
+
+        .brd {border: 1px solid ; min-height: 34px;}
+    </style>
+</head>
+<body>
+    <h1>Js Seciciler</h1>
+    <p>
+        Javascript ile DOM(Document Object Model) üzerinden elementler üzerinde
+        hızlıca maniplasyon yapabilir. Bunun için document yani sayfa
+        üzerindeki istediğimiz elementi seçmemiz yeterlidir.
+
+    </p>
+    <p>
+        Javascript de sayfadaki elementlerin herhangi bir özelliği ile
+            elementi seçebiliriz. Id, name, class veya alt-üst ilişkili olduğu
+            bir element üzerinden.
+
+    </p>
+
+    <h2>HTML Elementlerini Id ye Gore Secme</h2>
+
+    <p id="mrbdny">
+        Merhaba
+    </p>
+    <p id="jsIdSecciTest" style="border:1px solid; height: 46px;">
+
+    </p>
+    <script>
+        const icerik=document.getElementById("mrbdny");
+        document.getElementById("jsIdSecciTest").innerText="mrbdny id li element icerigi : " + icerik.innerText;
+    </script>
+
+    <hr>
+
+    <h2>HTML Elementlerini Etiket adina(Tag Name) ye Gore Secme</h2>
+    <div>div icerigi</div>
+
+    <div id="bosDiv" class="brd"></div>
+
+    <script>
+        const divler=document.getElementsByTagName("div"); //sayfadaki tum div elementlerini sectik
+        document.getElementById("bosDiv").innerText="sectigimiz div elementinden gelen icerik : " + divler[0].innerText; // getelementbytagname metodu sayfadaki kendisine verilen html element koduna sahip tum elementleri secer.
+
+
+    </script>
+
+    <h2 class="sorguSecici">HTML Elementlerini Css Sorgusu Kullanarak Secme</h2>
+
+    <p id="sorguSeciciId" class="brd"></p>
+
+    <style>
+        h2.sorguSecici{
+            background-color: brown;
+            color: aliceblue;
+        }
+    </style>
+
+    <script>
+        var cssGoreSec=document.querySelectorAll("h2.sorguSecici");
+        document.getElementById("sorguSecici").innerHTML=cssGoreSec[0].innerHTML;
+    </script>
+
+    <hr>
+
+    <h2>Tek Eleman Secici</h2>
+
+    <style>
+        #ilkElemanIcerigi{background-color: red; color: white;}
+    </style>
+
+    <p id="ilkElemenIcerigi"></p>
+    
+    <script>
+        var ilkEleman=document.querySelector("p");//sayfadaki ilk p elementini sec
+        document.querySelector("ilkElemanIcerigi").innerHTML=ilkEleman.innerHTML;//sayfadaki ilkElemanIcerigi id sine sahip ilk elemani secip icine ilkEleman elementinin 
+        //icindeki degeri aktardik
+    </script>
+
+    <hr>
+
+    <h2 id="olayBaslik">addEventListener Metodu</h2>
+    <p id="olayDinleme" class="brd"></p>
+    <p>Javascript de addEventListener Metodu ile Sayfadaki olaylari dinleyebiliriz</p>
+
+    <button>addEventListener Sil</button>
+
+    <script>
+        function ornekFunction() {
+            document.getElementById("olayDinleme").innerHTML="addEventListener calisti";
+            
+        }
+        document.getElementById("olayBaslik").addEventListener("click",ornekFunction);
+    </script>
+</body>
+</html>

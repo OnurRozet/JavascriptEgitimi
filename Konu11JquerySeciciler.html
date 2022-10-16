@@ -1,0 +1,31 @@
+   <!DOCTYPE html>
+   <html lang="tr">
+   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Seciciler</title>
+    <script src="/jquery-3.6.1.min.js"></script>
+    <style>
+        .brd{
+            border: 1px solid; min-height: 34px;
+        }
+    </style>
+   </head>
+   <body>
+    <h1>Jquery Seciciler</h1>
+    <p>Jquery ile javascript islemlerini daha az kod ile pratik bir sekilde halledebiliriz.</p>
+
+    <h2 id="baslik">Html Elementlerini Id ye Gore Secme</h2>
+
+    <p id="mesaj" class="brd"></p>
+    <script>
+        //jqueryde kodlar ve secme islemleri $ karakteriyle yapilir
+        $(document).ready(function(){
+            //$(document).ready metodu dokuman hazir oldugunda kodlarin calistirilmasini saglar
+            var secilecekEleman= $("#baslik");
+            $("mesaj").text("Basliktan gelen Icerik : " + secilecekEleman[0].innerText);
+        });
+    </script>
+   </body>
+   </html> 
